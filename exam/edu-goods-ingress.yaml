@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: edu-goods-ingress
+  namespace: edu-goods
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "edu-goods.211.254.212.108.sslip.io"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: edu-goods-svc
+                port:
+                  number: 80
+          - path: /api/v1/goods(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: edu-goods-svc
+                port:
+                  number: 80
