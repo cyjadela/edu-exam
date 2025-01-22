@@ -45,6 +45,6 @@ spec:
             - configMapRef:
                 name: edu-goods-config
       imagePullSecrets:
-        - name: k8s-edu-dockerhub-secret
+        - name: k8s-goods-dockerhub-secret
           #      nodeSelector:
           #        kubernetes.io/hostname: worker02
