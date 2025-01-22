@@ -16,3 +16,10 @@ spec:
                 name: edu-user-svc
                 port:
                   number: 80
+          - path: /api/v1/user(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: edu-user-svc
+                port:
+                  number: 80
